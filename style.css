@@ -65,13 +65,80 @@
     transform: translateX(-50%);
 }
 
-.cta:hover {
-    background: var(--blue-200);
-    color: var(--blue-600);
-    transition: background 0.3s, color 0.3s;
-}
 
 .container {
-    border: 1px solid red;
     width: 100%;
+}
+
+
+.ripple-button {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 24px;
+  background-color: var(--blue-600);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.ripple {
+  position: absolute;
+  background: var(--blue-200);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Centers the expansion */
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none; /* Prevents interference with clicks */
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: translate(-50%, -50%) scale(4); /* Expands outward */
+    opacity: 0;
+  }
+}
+
+
+.ripple-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    border: 2px solid var(--blue-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ripple-bg > .circle {
+    height: 1800px;
+    width: 3600px;
+    border-radius: 1800px 1800px 0 0;
+    border-bottom: transparent;
+}
+
+.circle2 {
+    height: 1200px;
+    width: 2400px;
+    border-radius: 1200px 1200px 0 0;
+    border-bottom: transparent;
+}
+
+.circle3 {
+    height: 800px;
+    width: 1600px;
+    border-radius: 800px 800px 0 0;
+    border-bottom: transparent;
+}
+
+.book5 {
+    z-index: -1;
 }

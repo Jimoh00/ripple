@@ -10,6 +10,10 @@
     <!-- lucide icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- gspa cdn link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <!-- google fonts link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +31,19 @@
         </div>
     </div>
 
-    <section class="home-section" id="home">
-        <div class="hero-content text-center relative -top-[100px]">
+    <section class="home-section " id="home">
+
+        <div class="ripple-bg">
+            <div class="circle circle1">
+                <div class="circle circle2">
+                    <div class="circle circle3"></div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="hero-content text-center relative -top-[50px] z-10">
             <h1 class="text-4xl md:text-6xl font-main">Come Read Together.</h1>
             <h1 class="text-4xl md:text-6xl font-main">Reflect Even Deeper.</h1>
 
@@ -38,17 +53,19 @@
                 themes and emotions. 
             </p>
 
-            <button class="cta mt-9"><p>Start Reading</p> <i data-lucide="arrow-right"></i> </button>
+            <button class="cta mt-9 ripple-button"><p>Start Reading</p> <i data-lucide="arrow-right"></i> </button>
         </div>
 
         <div class="container absolute -bottom-[80px] h-[25vh] flex items-center justify-center -space-x-[240px]">
-            <img src="./assets/img/book6.png" alt="book" >
-            <img src="./assets/img/book7.png" alt="book" class="z-1 relative -top-[25px]">
-            <img src="./assets/img/book3.png" alt="book" class="z-10 relative -top-[50px]">
-            <img src="./assets/img/book2.png" alt="book" class="z-1 relative -top-[25px]">
-            <img src="./assets/img/book4.png" alt="book" >
+            <img src="./assets/img/book6.png" alt="book" class="book book1">
+            <img src="./assets/img/book7.png" alt="book" class="z-1 relative book book2 -top-[25px]">
+            <img src="./assets/img/book3.png" alt="book" class="z-10 relative book book3 -top-[50px]">
+            <img src="./assets/img/book2.png" alt="book" class="z-1 relative book book4 -top-[25px]">
+            <img src="./assets/img/book4.png" alt="book" class="book relative book5 ">
         </div>
     </section>
+
+    <button class="ripple-button">Click Me</button>
 
 
     <!-- main script -->
