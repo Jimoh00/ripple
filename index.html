@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripple</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="logo text-3xl font-main">Ripple</h1>
+
+        <div class="nav-links flex items-center gap-[32px]">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <section class="home-section" id="home">
+        <div class="hero-content text-center relative -top-[100px]">
+            <h1 class="text-4xl md:text-6xl font-main">Come Read Together.</h1>
+            <h1 class="text-4xl md:text-6xl font-main">Reflect Even Deeper.</h1>
+
+            <p class="text-gray-600 mt-4 w-auto md:w-[600px] px-3 md:px-0">
+                Join curated book circles, share notes and annotations, 
+                and take part in guided discussions that help you unpack 
+                themes and emotions. 
+            </p>
+
+            <button class="cta mt-9"><p>Start Reading</p> <i data-lucide="arrow-right"></i> </button>
+        </div>
+
+        <div class="container absolute -bottom-[80px] h-[25vh] flex items-center justify-center -space-x-[240px]">
+            <img src="./assets/img/book6.png" alt="book" >
+            <img src="./assets/img/book7.png" alt="book" class="z-1 relative -top-[25px]">
+            <img src="./assets/img/book3.png" alt="book" class="z-10 relative -top-[50px]">
+            <img src="./assets/img/book2.png" alt="book" class="z-1 relative -top-[25px]">
+            <img src="./assets/img/book4.png" alt="book" >
+        </div>
+    </section>
+
+
+    <!-- main script -->
+    <script src="script.js"></script>
+
+    <!-- tailwind cdn link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
