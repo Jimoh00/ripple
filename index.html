@@ -53,7 +53,7 @@
                 themes and emotions. 
             </p>
 
-            <button class="cta mt-9 ripple-button"><p>Start Reading</p> <i data-lucide="arrow-right"></i> </button>
+            <button class="cta cta-main mt-9 ripple-button"><p>Start Reading</p> <i data-lucide="arrow-right"></i> </button>
         </div>
 
         <div class="container absolute -bottom-[80px] h-[25vh] flex items-center justify-center -space-x-[240px]">
@@ -63,10 +63,76 @@
             <img src="./assets/img/book2.png" alt="book" class="z-1 relative book book4 -top-[25px]">
             <img src="./assets/img/book4.png" alt="book" class="book relative book5 ">
         </div>
+
+        <div class="absolute z-10 bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
     </section>
 
-    <button class="ripple-button">Click Me</button>
 
+    <section class="top-books-section" id="top-section">
+
+        <h1 class="section-title top-book-section-title absolute font-main text-3xl font-semibold">Top Books of the Month</h1>
+
+        <div class="image-info">
+            <h1 id="current-pos">01</h1>
+            <h2 id="current-name" class="font-main">Book 1</h2>
+            <p id="current-author">Author </p>
+        </div>
+
+        <div class="carousel-container">
+            <div class="slider">
+                <div class="img" data-name="Book" data-author="PhotoShop" data-position="01">
+                    <img src="./assets/img/book1.png" alt="book">
+                </div>
+                <div class="img" data-name="Design Systems" data-author="Alia Kholmatova" data-position="02">
+                    <img src="./assets/img/book2.png" alt="book">
+                </div>
+                <div class="img" data-name="They're in the River" data-author="John Mcphee" data-position="03">
+                    <img src="./assets/img/book3.png" alt="book">
+                </div>
+                <div class="img" data-name="Book 4" data-author="Author 4" data-position="04">
+                    <img src="./assets/img/book4.png" alt="book">
+                </div>
+                <div class="img" data-name="Perpetual Motivation" data-author="Dave Durand" data-position="05">
+                    <img src="./assets/img/book5.png" alt="book">
+                </div>
+                <div class="img" data-position="6" data-author="Edward O. Wilson" data-name="The Origins of Creativity">
+                    <img src="./assets/img/book6.png" alt="book">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="forum-section w-[100%] h-[100vh] flex flex-col items-center justify-center overflow-hidden">
+        <h1 class="text-3xl md:text-5xl top-0 title font-main font-semibold text-center w-full md:w-[600px]">Join in the Conversation: Share Ideas & Connect</h1>
+        <div class="img-placeholder flex items-center py-6 mt-9 -space-x-[50px]">
+            <div class="forum-img w-[250px] h-[250px] rounded-xl overflow-hidden shadow-xl mt-12 ">
+                <img src="./assets/img/member.jpg" alt="member">
+            </div>
+            <div class="forum-img w-[250px] h-[250px] rounded-xl overflow-hidden shadow-xl -mt-9">
+                <img src="./assets/img/member2.jpg" alt="member">
+            </div>
+            <div class="forum-img w-[250px] h-[250px] rounded-xl overflow-hidden shadow-xl -mt-2">
+                <img src="./assets/img/member3.jpg" alt="member">
+            </div>
+            <div class="forum-img w-[250px] h-[250px] rounded-xl overflow-hidden shadow-xl">
+                <img src="./assets/img/member4.jpg" alt="member">
+            </div>
+            <div class="forum-img w-[250px] h-[250px] rounded-xl overflow-hidden shadow-xl">
+                <img src="./assets/img/member5.jpg" alt="member">
+            </div>
+            <div class="forum-img w-[250px] h-[250px] rounded-xl overflow-hidden shadow-xl -mt-12">
+                <img src="./assets/img/member6.jpg" alt="member">
+            </div>
+        </div>
+
+        <p class="text-center text-gray-600 w-full md:w-[600px]">
+            Welcome to our vibrant comunity forum! Dive in to share your ideas, ask questions, 
+            connect with fellow members and explore exciting topics together
+        </p>
+
+
+        <button class="cta mt-9 ripple-button"><p>Join Discord</p> <i data-lucide="arrow-right"></i> </button>
+    </section>
 
     <!-- main script -->
     <script src="script.js"></script>

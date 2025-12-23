@@ -50,6 +50,76 @@ gsap.from("circle1", {
 gsap.from(".book", {
     y: 5000,
     duration: 1,
-    stagger: 0.3,
+    stagger: 0.1,
     ease: "power2.out",
+});
+
+
+
+
+
+
+let slider = document.querySelector(".slider");
+let images = gsap.utils.toArray(".img");
+
+function sliderCircle() {
+  let radius = slider.offsetWidth / 2;
+  let center = slider.offsetWidth / 2;
+  let total = images.length;
+  let slice = (2 * Math.PI) / total;
+
+  images.forEach((item, i) => {
+    let radian = i * slice;
+
+    let x = radius * Math.sin(radian) + center;
+    let y = - radius * Math.cos(radian) + center;
+
+    gsap.set(item, {
+      rotation: radian + "rad",
+      xPercent: -50,
+      yPercent: -50,
+      x: x,
+      y: y
+    });
+  });
+}
+
+sliderCircle();
+
+window.addEventListener("resize", sliderCircle);
+
+let imageInfo = document.querySelector(".image-info");
+let currentName = document.getElementById("current-name");
+let currentAuthor = document.getElementById("current-author");
+let currentPos = document.getElementById("current-pos");
+
+gsap.to(".slider", {
+  rotate: () => -360,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".top-books-section",
+    start: "top top",
+    end: "+=200%",
+    scrub: 1,
+    pin: ".top-books-section",
+    pinSpacing: true,
+    onUpdate: (self) => {
+      // Calculate which image is at top (12 o'clock position)
+      let rotation = self.progress * 360;
+      let currentIndex = Math.round(rotation / (360 / images.length)) % images.length;
+      let currentImage = images[currentIndex];
+      
+      // Update info
+      currentName.textContent = currentImage.dataset.name;
+      currentAuthor.textContent = currentImage.dataset.author;
+      currentPos.textContent = currentImage.dataset.position;
+      
+      // Show when in view
+      if (self.progress > 0.05 && self.progress < 0.95) {
+        imageInfo.classList.add("active");
+      } else {
+        imageInfo.classList.remove("active");
+      }
+    }
+  }
 });

@@ -18,6 +18,10 @@
     font-family: "Chillax", sans-serif;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .navbar {
     width: 100%;
     padding: 24px;
@@ -43,7 +47,7 @@
 }
 
 .home-section > h1 {
-    font-weight: 450;
+    font-weight: 550;
 }
 
 .cta {
@@ -61,6 +65,9 @@
     gap: 8px;
     cursor: pointer;
     position: relative;
+}
+
+.cta-main {
     left: 50%;
     transform: translateX(-50%);
 }
@@ -118,10 +125,10 @@
     justify-content: center;
 }
 
-.ripple-bg > .circle {
-    height: 1800px;
-    width: 3600px;
-    border-radius: 1800px 1800px 0 0;
+.ripple-bg > .circle1 {
+    height: 2000px;
+    width: 4000px;
+    border-radius: 2000px 2000px 0 0;
     border-bottom: transparent;
 }
 
@@ -141,4 +148,131 @@
 
 .book5 {
     z-index: -1;
+}
+
+
+
+.top-books-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.top-book-section-title {
+    top: 10%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    color: var(--blue-600);
+}
+
+.carousel-container {
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    bottom: 0;
+}
+
+.slider {
+    position: absolute;
+    width: 400vw;
+    height: 400vw;
+    max-width: 3000px;
+    max-height: 3000px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.image-info {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.image-info.active {
+  opacity: 1;
+}
+
+.image-info h1 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--blue-200);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-600);
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0.8rem;
+}
+
+.image-info h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  line-height: 50px;
+}
+
+.image-info p {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+
+.title {
+    color: var(--blue-600);
+}
+
+.forum-section {
+    background: var(--blue-200);
+}
+
+.forum-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.forum-img:first-child {
+    transform: rotate(-6deg);
+}
+
+.forum-img:nth-child(2) {
+    transform: rotate(-6deg);
+}
+
+.forum-img:nth-child(3) {
+    transform: rotate(-3deg);
+}
+
+.forum-img:nth-child(4) {
+    transform: rotate(-1deg);
+}
+
+.forum-img:nth-child(5) {
+    transform: rotate(4deg);
+}
+
+.forum-img:last-child {
+    transform: rotate(8deg);
 }
