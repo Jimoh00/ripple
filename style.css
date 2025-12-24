@@ -35,6 +35,11 @@ body {
     color: var(--blue-600);
 }
 
+.nav-links > a:hover  {
+    color: var(--blue-600);
+    transition: color 0.3s ease;
+}
+
 .home-section {
     width: 100%;
     height: 100vh;
@@ -241,10 +246,6 @@ body {
 
 .title {
     color: var(--blue-600);
-}
-
-.forum-section {
-    background: var(--blue-200);
 }
 
 .forum-img > img {

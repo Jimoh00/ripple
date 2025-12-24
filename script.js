@@ -36,14 +36,14 @@ gsap.from(".circle3", {
 gsap.from(".circle2", {
     opacity: 0,
     scale: 0,
-    delay: 1,
+    delay: 0.6,
     duration: 1
 });
 
-gsap.from("circle1", {
+gsap.from(".circle1", {
     opacity: 0,
     scale: 0,
-    delay: 2,
+    delay: 1,
     duration: 1
 })
 
@@ -122,4 +122,123 @@ gsap.to(".slider", {
       }
     }
   }
+});
+
+
+const container = document.querySelector('.img-placeholder');
+const children = container.querySelectorAll(':scope > *:not(:first-child)');
+
+// Set initial state
+gsap.set(children, {
+  marginLeft: '-200px'
+});
+
+// Animate on scroll
+gsap.to(children, {
+  marginLeft: '-50px',
+  duration: 1,
+  ease: 'power2.out',
+  scrollTrigger: {
+    trigger: container,
+    start: 'top 80%',
+    end: 'top 30%', 
+    scrub: 1, 
+  }
+});
+
+gsap.from(".title", {
+  y: 500,
+  opacity: 0,
+  ease: 'power2.out',
+  scrollTrigger: {
+    trigger: ".forum-section",
+    start: 'top 70%%',
+    end: 'top 20%',
+    scrub: 3
+  }
+});
+
+gsap.from(".forum-body-text", {
+  opacity: 0,
+  duration: 5,
+  ease: 'power2.out',
+  scrollTrigger: {
+    trigger: ".forum-section",
+    start: "top 20%",
+    end: 'top 0%',
+    scrub: 2,
+  }
+});
+
+gsap.from(".ripple-button", {
+  y: 500,
+  ease: 'power2.out',
+  scrollTrigger: {
+    trigger: ".forum-section",
+    start: 'top 15%',
+    end: 'top 0%',
+    scrub: 2,
+    markers: true
+  }
+})
+
+
+
+
+
+const books = document.querySelectorAll('.book');
+
+// Store original positions
+const originalPositions = [
+  { y: 0, z: 1 },      // book1
+  { y: -25, z: 2 },    // book2
+  { y: -50, z: 10 },   // book3 (center/highest)
+  { y: -25, z: 2 },    // book4
+  { y: 0, z: 1 }       // book5
+];
+
+// Set initial GSAP positions (overrides Tailwind)
+books.forEach((book, index) => {
+  gsap.set(book, {
+    y: originalPositions[index].y,
+    zIndex: originalPositions[index].z
+  });
+});
+
+books.forEach((book, index) => {
+  book.addEventListener('mouseenter', () => {
+    // Hovered book moves up from its original position
+    gsap.to(book, {
+      y: originalPositions[index].y - 30, // 30px above original
+      zIndex: 20,
+      scale: 1.05,
+      duration: 0.3,
+      ease: 'power2.out'
+    });
+    
+    // Other books move down from their original positions
+    books.forEach((otherBook, otherIndex) => {
+      if (otherIndex !== index) {
+        gsap.to(otherBook, {
+          y: originalPositions[otherIndex].y + 15, // 15px below original
+          zIndex: originalPositions[otherIndex].z,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      }
+    });
+  });
+  
+  book.addEventListener('mouseleave', () => {
+    // Reset all to original positions
+    books.forEach((b, i) => {
+      gsap.to(b, {
+        y: originalPositions[i].y,
+        zIndex: originalPositions[i].z,
+        scale: 1,
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    });
+  });
 });
