@@ -178,7 +178,6 @@ gsap.from(".ripple-button", {
     start: 'top 15%',
     end: 'top 0%',
     scrub: 2,
-    markers: true
   }
 })
 
